@@ -1,0 +1,144 @@
+.set {
+  padding: 100px 0;
+  border-radius: 64px;
+  background:  #FFF;
+  &__header {
+    max-width: 850px;
+    position: relative;
+    z-index: 1;
+    h2 {
+      margin: 0;
+      flex: 1 1 50%;
+      color: #202C38;
+      font-size: 70px;
+      font-weight: 400;
+      line-height: 80%;
+      letter-spacing: -2.8px;
+    }
+
+    p {
+      margin: 0;
+      margin-top: 24px;
+      color:  rgba(32, 44, 56, 0.80);
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 120%;
+    }
+  }
+
+  &__wrapper {
+    position: relative;
+  }
+
+  &__list {
+    margin: 48px 0;
+    max-width: 860px;
+    display: flex;
+    align-items: flex-start;
+    align-content: flex-start;
+    gap: 12px;
+    flex-wrap: wrap;
+    transition: all 0.5s ease;
+    z-index: 1;
+    position: relative;
+    div {
+      display: flex;
+      padding: 6px 10px;
+      align-items: flex-start;
+      gap: 4px;
+      border-radius: 100px;
+      background:  #F6F6F6;
+      color:  #202C38;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 120%;
+      i {
+        font-style: normal;
+        color:  #F3932B;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 100%;
+      }
+
+      @include hover {
+        background:  #DB780C;
+        color: #FFF;
+         i {
+          color: #FFF;
+        }
+      }
+    }
+  }
+
+  &__cover {
+    position: absolute;
+    right: -30px;
+    bottom: -48px;
+  }
+}
+
+@include media-tablet-horizontal {
+  .set {
+    padding: 84px 0;
+    border-radius: 48px;
+    &__header {
+      max-width: 100%;
+      h2 {
+        font-size: 54px;
+      }
+
+      p {
+        margin-top: 24px;
+        font-size: 20px;
+      }
+    }
+
+    &__wrapper {
+      display: flex;
+      flex-direction: column-reverse;
+      margin-top: 32px;
+    }
+
+    &__list {
+      margin: 32px 0;
+    }
+
+    &__cover {
+      position: relative;
+      right:  auto;
+      bottom: auto;
+    }
+  }
+}
+
+@include media-mobile-horizontal {
+  .set {
+    padding: 64px 0;
+    border-radius: 24px;
+    &__header {
+      max-width: 100%;
+      h2 {
+        font-size: 32px;
+      }
+
+      p {
+        margin-top: 16px;
+        font-size: 16px;
+      }
+    }
+
+    &__wrapper {
+      margin-top: 32px;
+    }
+
+    &__list {
+      margin: 32px 0;
+    }
+
+    &__cover {
+      position: relative;
+      right:  auto;
+      bottom: auto;
+    }
+  }
+}

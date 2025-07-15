@@ -1,0 +1,411 @@
+.catalog {
+  margin: 120px 0;
+  &__header {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    h2 {
+      margin: 0;
+      flex: 1 1 50%;
+      color: #202C38;
+      font-size: 70px;
+      font-weight: 400;
+      line-height: 80%;
+      letter-spacing: -2.8px;
+    }
+
+    p {
+      margin: 0;
+      margin-top: 24px;
+      color:  rgba(32, 44, 56, 0.80);
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 120%;
+    }
+  }
+
+  &__controle {
+    margin: 0 auto;
+    margin-top: 48px;
+    display: inline-flex;
+    padding: 8px;
+    align-items: center;
+    border-radius: 100px;
+    background:  #FFF;
+    width: auto;
+    button {
+      display: flex;
+      padding: 20px 32px;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      border-radius: 100px;
+      color:  #202C38;
+      text-align: center;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 100%;
+      background-color: #fff;
+
+      &.active {
+        background:  #202C38;
+        color: white;
+      }
+    }
+
+  }
+
+  &__tabs {
+    margin-top: 24px;
+  }
+
+  &__tab {
+    display: none;
+    align-items: flex-start;
+    gap: 20px;
+    align-self: stretch;
+    &.active {
+      display: flex;
+    }
+    &.catalog-notab {
+      display: flex;
+      .catalog__cover {
+        background: #202C38;
+        color: #FFF;
+      }
+      .catalog__name {
+        color: #FFF;
+      }
+    }
+
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 32px;
+    background:  rgba(255, 255, 255, 0.64);
+    flex: 1 1 33.333%;
+    padding: 12px;
+  }
+
+  &__cover {
+    gap: 10px;
+    display: flex;
+    padding: 24px 12px;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+    border-radius: 24px 24px 8px 8px;
+    background:  #F3EFEA;
+    width: 100%;
+    aspect-ratio: 5 / 5.5;
+
+  }
+
+  &__name {
+    align-self: stretch;
+    color:  #202C38;
+    text-align: center;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 100%;
+  }
+
+  &__content {
+    width: 100%;
+    padding: 24px 12px 24px;
+    h3 {
+      margin: 0;
+      color:  #202C38;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 100%;
+      margin-bottom: 12px;
+    }
+    ._list {
+      margin-bottom: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      div {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color:  #202C38;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 120%;
+        span {
+          &:last-child {
+            color:  rgba(32, 44, 56, 0.80);
+          }
+        }
+      }
+    }
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      li {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        font-size: 14px;
+        gap: 12px;
+        &::before {
+          flex: 0 0 auto;
+          content: '';
+          display: block;
+          width: 20px;
+          height: 20px;
+          background: url("data:image/svg+xml,%3Csvg width='17' height='18' viewBox='0 0 17 18' fill='none' xmlns='http://www.w3.org/2000/svg'%0A%3E%3Cpath d='M8.49984 0.666992C3.90817 0.666992 0.166504 4.40866 0.166504 9.00033C0.166504 13.592 3.90817 17.3337 8.49984 17.3337C13.0915 17.3337 16.8332 13.592 16.8332 9.00033C16.8332 4.40866 13.0915 0.666992 8.49984 0.666992ZM12.4832 7.08366L7.75817 11.8087C7.6415 11.9253 7.48317 11.992 7.3165 11.992C7.14984 11.992 6.9915 11.9253 6.87484 11.8087L4.5165 9.45033C4.27484 9.20866 4.27484 8.80866 4.5165 8.56699C4.75817 8.32533 5.15817 8.32533 5.39984 8.56699L7.3165 10.4837L11.5998 6.20033C11.8415 5.95866 12.2415 5.95866 12.4832 6.20033C12.7248 6.44199 12.7248 6.83366 12.4832 7.08366Z' fill='%2319AD3D' /%3E%3C/svg%3E%0A") center center / contain no-repeat;
+        }
+      }
+    }
+  }
+
+  &__footer {
+    padding: 0 12px 12px;
+  }
+
+  &__price {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+    p {
+      margin: 0;
+      color:  #202C38;
+      font-size: 42px;
+      font-weight: 400;
+      line-height: 80%;
+      letter-spacing: -1.68px;
+    }
+    div {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      span {
+        display: flex;
+        padding: 4px 8px;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        border-radius: 100px;
+        border: 1px solid  rgba(32, 44, 56, 0.02);
+        background:  #F0FF1F;
+        backdrop-filter: blur(28px);
+        color:  #202C38;
+        font-size: 12px;
+        font-style: italic;
+        font-weight: 700;
+        line-height: 120%;
+      }
+      i {
+        color:  rgba(32, 44, 56, 0.50);
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 120%;
+        text-decoration-line: line-through;
+      }
+    }
+  }
+
+  &__links {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    padding-top: 12px;
+    gap: 12px;
+    a {
+      flex: 1 1 auto;
+      display: flex;
+      padding: 13px 20px;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      border-radius: 32px;
+      background:  rgba(32, 44, 56, 0.08);
+      color:  #202C38;
+      text-align: center;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 100%;
+      &::before {
+        content: '';
+        display: block;
+        width: 31px;
+        height: 31px;
+        background: url('../img/ozon.svg');
+      }
+      &.wb {
+        &::before {
+          background: url('../img/wb.svg');
+        }
+      }
+      @include hover {
+        color: #F3EFEA;
+        background: #202C38;
+      }
+    }
+  }
+}
+
+@include media-tablet-horizontal {
+  .catalog {
+    margin: 84px 0;
+    &__header {
+      h2 {
+        font-size: 50px;
+      }
+    }
+
+    &__controle {
+      margin-top: 32px;
+    }
+
+    &__tabs {
+      margin-top: 24px;
+      overflow: hidden;
+    }
+
+    &__tab {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      align-self: stretch;
+      overflow-x: auto;
+
+    }
+
+    &__item {
+      flex: 1 1 50%;
+      max-width: 300px;
+    }
+
+    &__cover  {
+      aspect-ratio: 5 / 3;
+      img {
+        max-height: 150px;
+      }
+    }
+
+    &__name {
+      font-size: 20px;
+    }
+    &__price {
+      p {
+        font-size: 32px;
+      }
+    }
+    &__links {
+      a {
+        font-size: 14px;
+        &::before {
+          content: '';
+          display: block;
+          width: 24px;
+          height: 24px;
+          background: url('../img/ozon.svg') center center / contain no-repeat;
+        }
+        &.wb {
+          &::before {
+            background: url('../img/wb.svg') center center / contain over no-repeat;
+          }
+        }
+        @include hover {
+          color: #F3EFEA;
+          background: #202C38;
+        }
+      }
+    }
+  }
+}
+
+@include media-mobile-horizontal {
+  .catalog {
+    margin: 64px 0;
+    &__header {
+      h2 {
+        font-size: 32px;
+      }
+      p {
+        margin-top: 16px;
+        font-size: 16px;
+      }
+    }
+
+    &__controle {
+      margin-top: 32px;
+      overflow-x: auto;
+      width: 100%;
+      button {
+        white-space: nowrap;
+      }
+    }
+
+    &__tabs {
+      margin-top: 24px;
+      overflow: hidden;
+    }
+
+    &__tab {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      align-self: stretch;
+      overflow-x: auto;
+
+    }
+
+    &__item {
+      flex: 1 1 90%;
+    }
+    &__cover {
+      aspect-ratio: 5 / 5;
+      img {
+        max-height: 150px;
+      }
+    }
+
+    &__links {
+      a {
+        font-size: 14px;
+        &::before {
+          content: '';
+          display: block;
+          width: 24px;
+          height: 24px;
+          background: url('../img/ozon.svg') center center / contain no-repeat;
+        }
+        &.wb {
+          &::before {
+            background: url('../img/wb.svg') center center / contain over no-repeat;
+          }
+        }
+        @include hover {
+          color: #F3EFEA;
+          background: #202C38;
+        }
+      }
+    }
+
+    &__price {
+      p {
+        font-size: 32px;
+      }
+    }
+  }
+}

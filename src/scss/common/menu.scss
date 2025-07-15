@@ -1,0 +1,117 @@
+
+.mobile-menu {
+  position: fixed;
+  display: none;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding-top: 78px;
+  min-height: 100vh;
+  background:  #FFF;
+  flex-direction: column;
+  z-index: 9998;
+  &__container {
+    flex: 1 1 auto;
+    border-top: 1px solid  rgba(32, 44, 56, 0.12);
+    padding: 84px 16px 16px;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+  }
+
+  &__list {
+    ul {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 32px;
+      align-self: stretch;
+      list-style: none;
+      a {
+        color:  #202C38;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 100%;
+      }
+    }
+  }
+
+  &__footer {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@include media-tablet-horizontal {
+  .mobile-menu {
+    position: fixed;
+    display: flex;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-top: 84px;
+    height: 100vh;
+    background:  #FFF;
+    flex-direction: column;
+    transition: 0.5s ease all;
+    transform: translateY(-100%);
+    &.active {
+      transform: translateY(0);
+    }
+    &__container {
+      flex: 1 1 auto;
+      border-top: 1px solid  rgba(32, 44, 56, 0.12);
+      padding: 84px 16px 16px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__list {
+      padding-bottom: 32px;
+      ul {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 32px;
+        align-self: stretch;
+        list-style: none;
+        a {
+          color:  #202C38;
+          font-size: 24px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 100%;
+        }
+      }
+    }
+
+    &__footer {
+      margin-top: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 32px;
+      .phone {
+        text-align: center;
+        color:  #202C38;
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 120%;
+      }
+    }
+  }
+}
+
+@include media-mobile-horizontal {
+  .mobile-menu {
+    padding-top: 64px;
+  }
+}

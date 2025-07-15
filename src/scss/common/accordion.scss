@@ -1,0 +1,86 @@
+.accordion {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	&-item {
+		width: 100%;
+		background: transparent;
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		gap: 15px;
+		padding: 32px 0;
+		border-top: 1px solid rgba(32, 44, 56, 0.12);
+		.accordion-buttom {
+			display: block;
+			flex: 0 0 64px;
+			width: 64px;
+			height: 64px;
+			border-radius: 100%;
+			border: 1px solid #202C38;
+			background: transparent url("data:image/svg+xml,%3Csvg width='64' height='64' viewBox='0 0 64 64' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M24 32H40' stroke='%23202C38' stroke-opacity='1' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M32 40V24' stroke='%23202C38' stroke-opacity='1' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A") center center / contain no-repeat;
+			transition: all 0.3s ease;
+			@include media-mobile-horizontal {
+				flex: 0 0 48px;
+				width: 48px;
+				height: 48px;
+			}
+		}
+		&.active {
+			.accordion-buttom {
+				border: none;
+				transform: rotate(45deg);
+				background:  #FFF url("data:image/svg+xml,%3Csvg width='64' height='64' viewBox='0 0 64 64' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M24 32H40' stroke='%23202C38' stroke-opacity='1' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M32 40V24' stroke='%23202C38' stroke-opacity='1' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A") center center / contain no-repeat;
+			}
+		}
+		.accordion-container {
+			width: 100%;
+			background: transparent;
+			display: flex;
+			justify-content: flex-start;
+			align-items: center;
+			gap: 15px;
+		}
+	}
+	&-header {
+		cursor: pointer;
+		position: relative;
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		gap: 24px;
+		span {
+			flex: 1 1 auto;
+			color:  #202C38;
+			font-size: 32px;
+			font-style: normal;
+			font-weight: 400;
+			line-height: 80%;
+			letter-spacing: -0.64px;
+			@include media-mobile-horizontal {
+				font-size: 20px;
+			}
+		}
+	}
+	&-content {
+		width: 100%;
+	}
+	&-body {
+		display: none;
+
+		p {
+			align-self: stretch;
+			color: rgba(32, 44, 56, 0.80);
+			font-size: 20px;
+			font-style: normal;
+			font-weight: 400;
+			line-height: 120%;
+			@include media-mobile-horizontal {
+				font-size: 16px;
+			}
+
+		}
+	}
+}

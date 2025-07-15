@@ -1,0 +1,76 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+	object-fit: contain;
+}
+
+a {
+	text-decoration: none;
+	transition: all 0.5s ease;
+	color: #F3932B;
+	@include hover {
+		color: #DB780C;
+	}
+	&:active {
+		color: #DB780C;
+	}
+}
+a,
+button {
+	cursor: pointer;
+	border: none;
+}
+html {
+	overflow: hidden auto;
+	&::-webkit-scrollbar {
+		width: 10px;
+	}
+
+	&::-webkit-scrollbar-track {
+		background-color: rgba(#202C38, 0.08);
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background-color: #F3932B;
+	}
+}
+body {
+	font-family: $font-family-primary;
+	margin: 0;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 140%;
+	min-height: 100vh;
+	display: flex;
+	overflow: hidden;
+	flex-direction: column;
+	background-color: #F3EFEA;
+	color: #202C38;
+}
+
+
+.container {
+	max-width: $mediaWidthLaptop;
+	width: 100%;
+	margin: 0 auto;
+	padding: 0;
+	@include media-tablet-horizontal {
+		max-width: 100%;
+		padding: 0 10px;
+	}
+}
+
+.body {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	footer {
+		margin-top: auto;
+	}
+}

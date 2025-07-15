@@ -1,0 +1,280 @@
+.footer {
+  margin-top: auto;
+  padding: 64px 0px 24px 0px;
+  border-radius: 64px 64px 0px 0px;
+  background:  #FFF;
+  &__top {
+    display: flex;
+    align-items: stretch;
+    gap: 20px;
+    padding-bottom: 64px;
+
+  }
+
+  &__main {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 32px;
+  }
+
+  &__logo {
+    img {
+      max-width: 425px;
+    }
+  }
+
+  &__subscription {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    align-self: stretch;
+    h3 {
+      margin: 0;
+      color:  #202C38;
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 100%;
+    }
+    p {
+      max-width: 90%;
+      margin: 0;
+      align-self: stretch;
+      color:  rgba(32, 44, 56, 0.80);
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 120%;
+    }
+    .subscription {
+      &__links {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        img {
+          width: 32px;
+          height: 32px;
+        }
+      }
+    }
+
+
+  }
+
+  &__links {
+    display: flex;
+    padding: 12px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 32px;
+    border-radius: 32px;
+    background:  #F6F6F6;
+
+  }
+
+  &__phone {
+    display: flex;
+    padding: 24px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    align-self: stretch;
+    border-radius: 24px;
+    background: #202C38;
+    h3 {
+      margin: 0;
+      padding: 0;
+      color:  #FFF;
+      font-size: 24px;
+      font-weight: 600;
+      line-height: 100%;
+    }
+    a {
+      color:  #FFF;
+      font-size: 42px;
+      font-weight: 400;
+      line-height: 80%;
+      letter-spacing: -1.68px;
+    }
+    span {
+      color:  #FFF;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 120%;
+      opacity: 0.7;
+    }
+  }
+
+  &__row {
+    display: flex;
+    padding: 24px;
+    align-items: flex-start;
+    gap: 32px;
+    align-self: stretch;
+
+  }
+
+  &__col {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    p {
+      margin: 0;
+      color:  #202C38;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 120%;
+    }
+    a {
+      color:  #F3932B;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 100%;
+      text-decoration-line: underline;
+      text-decoration-style: solid;
+      text-decoration-skip-ink: none;
+      text-decoration-thickness: auto;
+      text-underline-offset: auto;
+      text-underline-position: from-font;
+
+    }
+  }
+
+  &__bottom {
+    padding-top: 24px;
+    border-top: 1px solid rgba(32, 44, 56, 0.12);
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    align-self: stretch;
+    justify-content: space-between;
+    p, a {
+      margin: 0;
+      color:  rgba(32, 44, 56, 0.50);
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 120%;
+    }
+
+  }
+}
+
+@include media-tablet-horizontal {
+  .footer {
+    &__top {
+     flex-direction: column-reverse;
+      gap: 48px;
+    }
+
+    &__main {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 48px;
+    }
+
+    &__logo {
+      flex: 0 0 50%;
+      img {
+        max-width: 425px;
+        width: 100%;
+      }
+    }
+
+    &__subscription {
+      gap: 12px;
+
+      p {
+        max-width: 100%;;
+      }
+      .subscription {
+
+        &__links {
+          padding-top: 12px;
+        }
+      }
+
+    }
+
+  }
+}
+
+@include media-mobile-horizontal {
+  .footer {
+    &__top {
+     flex-direction: column-reverse;
+      gap: 48px;
+    }
+
+    &__main {
+      flex-direction: column;
+      gap: 36px;
+    }
+
+    &__logo {
+      flex: 0 0 auto;
+      width: 100%;
+      img {
+        max-width: 425px;
+        width: 100%;
+      }
+    }
+    &__row {
+      flex-direction: column;
+      gap: 38px;
+      padding: 0;
+    }
+    &__col {
+      p, a {
+        font-size: 14px;
+      }
+    }
+
+    &__subscription {
+      gap: 12px;
+      h3 {
+        font-size: 20px;
+
+      }
+      p {
+        max-width: 100%;
+        font-size: 14px;
+      }
+      .subscription {
+
+        &__links {
+          padding-top: 12px;
+        }
+      }
+
+    }
+
+    &__links {
+      padding: 0;
+    }
+    &__phone {
+      padding: 24px;
+      border-radius: 24px;
+      h3 {
+        font-size: 18px;
+      }
+      a {
+        font-size: 28px;
+      }
+      span {
+        font-size: 14px;
+      }
+    }
+
+    &__bottom {
+      flex-direction: column;
+      p, a {
+        font-size: 14px;
+      }
+    }
+
+  }
+}

@@ -1,0 +1,27 @@
+.btn {
+  display: flex;
+  padding: 20px 32px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 100px;
+  background:  #F3932B;
+  text-align: center;
+  border: none;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 100%;
+  color: #fff;
+  transition: 0.5s ease all;
+  @include hover {
+		background-color: #DB780C;
+	}
+	&:active {
+    background-color: #DB780C;
+		transform: scale(0.95);
+	}
+
+  &_dark {
+    background:  #202C38;
+  }
+}
