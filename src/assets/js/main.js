@@ -538,8 +538,8 @@ new Swiper("#ProductSlider", {
 
 document.addEventListener('DOMContentLoaded', function() {
   const header = document.querySelector('header');
-  const buttonsTab = document.querySelectorAll(".catalog__controle button");
-  const tabs = document.querySelectorAll(".catalog__tab");
+  const buttonsTab = document.querySelectorAll(".working__controle button");
+  const tabs = document.querySelectorAll(".working__tab");
 
   window.addEventListener('scroll', function() {
     if (window.scrollY > 100) {

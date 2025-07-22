@@ -18,6 +18,12 @@
     font-weight: 400;
     line-height: 120%;
   }
+  &.t-center {
+    text-align: center;
+    p {
+      margin: 0 auto;
+    }
+  }
   &.w-100 {
     p {
       max-width: 100%;
