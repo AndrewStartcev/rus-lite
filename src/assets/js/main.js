@@ -485,16 +485,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-document.querySelector(".ios-switch input").addEventListener("change", function () {
-  const slider = this.nextElementSibling;
-  if (this.checked) {
-    slider.querySelector(".option.left").classList.remove("left");
-    slider.querySelector(".option.right").classList.add("left");
-  } else {
-    slider.querySelector(".option.right").classList.remove("left");
-    slider.querySelector(".option.left").classList.add("left");
-  }
-});
+
 
 new Swiper("#offersSlider", {
   slidesPerView: 1.2,
