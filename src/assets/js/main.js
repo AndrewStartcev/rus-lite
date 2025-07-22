@@ -143,10 +143,12 @@ class Accordion {
     this.header = header;
     this.accordionItem = header.closest(".accordion-item");
     this.accordionBody = this.accordionItem.querySelector(".accordion-body");
+    this.accordionCover = this.accordionItem.querySelector(".accordion-cover");
     this.button = this.accordionItem.querySelector(".accordion-buttom");
 
     if (!this.accordionItem.classList.contains("active")) {
       this.accordionBody.style.display = "none";
+      this.accordionCover.style.display = "none";
     }
 
     this.initEvent();
@@ -154,16 +156,47 @@ class Accordion {
 
   toggleAccordion() {
     const isActive = this.accordionItem.classList.toggle("active");
-    _slideToggle(this.accordionBody, 300);
-    Accordion.closeOthers(this.accordionItem);
+
+    const windowWidth = window.innerWidth;
+
+    if (isActive) {
+      _slideDown(this.accordionBody, 300);
+
+      // Показываем cover только если экран < 1382px
+      if (windowWidth < 1382) {
+        _slideDown(this.accordionCover, 300);
+      } else {
+        this.accordionCover.style.display = "none";
+      }
+
+      // Подстановка картинки в .accordions__cover
+      const imgSrc = this.accordionItem.dataset.accordioSrc;
+      const mainCoverImg = document.querySelector("[data-accordion-cover]");
+      if (mainCoverImg && imgSrc) {
+        mainCoverImg.src = imgSrc;
+      }
+
+      Accordion.closeOthers(this.accordionItem);
+    } else {
+      _slideUp(this.accordionBody, 300);
+      if (windowWidth < 1382) {
+        _slideUp(this.accordionCover, 300);
+      }
+    }
   }
 
   static closeOthers(currentItem) {
+    const windowWidth = window.innerWidth;
+
     document.querySelectorAll(".accordion-item").forEach(otherItem => {
       if (otherItem !== currentItem) {
         otherItem.classList.remove("active");
-        const otherBody = otherItem.querySelector(".accordion-body");
-        _slideUp(otherBody, 300);
+
+        const body = otherItem.querySelector(".accordion-body");
+        const cover = otherItem.querySelector(".accordion-cover");
+
+        if (body) _slideUp(body, 300);
+        if (cover && windowWidth < 1382) _slideUp(cover, 300);
       }
     });
   }
@@ -177,6 +210,9 @@ class Accordion {
     }
   }
 }
+
+
+
 
 document.addEventListener("DOMContentLoaded", function () {
   document.querySelectorAll('input[type="tel"]').forEach(input => {

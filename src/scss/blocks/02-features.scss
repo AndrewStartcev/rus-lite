@@ -1,0 +1,33 @@
+.features {
+  margin: 120px 0;
+  &__accordions {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 52px;
+  }
+
+  &__accordion {
+    flex: 1 1 auto;
+  }
+  &__cover {
+    flex: 0 0 auto;
+    max-width: 516px;
+    img {
+      border-radius: 32px;
+      aspect-ratio: 1;
+    }
+  }
+}
+
+@include media-tablet-horizontal {
+  .features {
+    margin: 84px 0;
+    &__accordion {
+      flex: 1 1 auto;
+    }
+    &__cover {
+      display: none;
+    }
+  }
+}

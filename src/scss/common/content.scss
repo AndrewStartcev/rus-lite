@@ -1,0 +1,46 @@
+.header-block {
+  margin-bottom: 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  h2 {
+    margin: 0;
+    font-size: 70px;
+    font-weight: 400;
+    line-height: 80%;
+    letter-spacing: -2.8px;
+  }
+  p {
+    max-width: 60%;
+    margin: 0;
+    color:  rgba(32, 44, 56, 0.80);
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 120%;
+  }
+}
+
+@include media-tablet-horizontal {
+  .header-block {
+    margin-bottom: 32px;
+    gap: 24px;
+    h2 {
+      font-size: 54px;
+    }
+    p {
+      max-width: 100%;
+    }
+  }
+}
+
+@include media-mobile-horizontal {
+  .header-block {
+    gap: 16px;
+    h2 {
+      font-size: 32px;
+    }
+    p {
+      font-size: 16px;
+    }
+  }
+}
