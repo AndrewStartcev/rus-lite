@@ -1,0 +1,213 @@
+.form {
+  &_price {
+    text-align: center;
+    color:  #202C38;
+    font-size: 42px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 80%;
+    letter-spacing: -1.68px;
+    display: flex;
+    align-items: flex-end;
+    gap: 12px;
+    justify-content: center;
+    margin-bottom: 26px;
+    span {
+      color:  rgba(32, 44, 56, 0.50);
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 120%;
+      text-decoration-line: line-through;
+
+    }
+  }
+  .btn {
+    width: 100%;
+  }
+
+  &__header {
+    display: flex;
+    padding: 32px 24px;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    align-self: stretch;
+    border-radius: 24px 24px 8px 8px;
+    background: #202C38;
+    color: white;
+    h2 {
+      margin: 0;
+      color:  #FFF;
+      text-align: center;
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 100%;
+    }
+    p {
+      margin: 0;
+      color:  #FFF;
+      text-align: center;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 120%;
+      width: 80%;
+      i {
+        font-style: normal;
+        color: #19AD3D;
+        font-weight: 500;
+      }
+
+    }
+
+  }
+
+  &__content {
+    display: flex;
+    padding: 12px 4px;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    align-self: stretch;
+
+  }
+
+  &__footer {
+    padding-top: 24px;
+    margin-top: 24px;
+    border-top: 1px solid rgba(32, 44, 56, 0.12);
+  }
+}
+.form-item {
+  margin-bottom: 24px;
+
+  &.radios {
+    margin-top: 24px;
+
+    & > label {
+      display: block;
+      color: #202C38;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 100%;
+      margin-bottom: 16px;
+    }
+  }
+
+  &__radios {
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+  }
+  input[type="text"],   input[type="tel"],  input[type="email"] {
+    display: flex;
+    padding: 20px 24px;
+    width: 100%;
+    gap: 10px;
+    border-radius: 100px;
+    border: 1px solid  rgba(32, 44, 56, 0.12);
+    background:  rgba(255, 255, 255, 0.64);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 120%;
+    outline: none;
+    &:focus-within {
+      border: 1px solid  #202C38;
+    }
+  }
+}
+
+.radio-option {
+  flex: 1 1 auto;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  color:  rgba(32, 44, 56, 0.80);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 120%;
+
+
+  input[type="radio"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    position: relative;
+    transition: border 0.2s ease;
+
+    &:checked {
+      border-color: #F3932B;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 4px;
+        left: 4px;
+        width: 8px;
+        height: 8px;
+        background-color: #FF8A00;
+        border-radius: 50%;
+      }
+    }
+  }
+}
+
+.form-item.checkbox {
+  margin-top: 24px;
+
+  .checkbox-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 400;
+    color:  rgba(#202C38 , 0.8);
+    cursor: pointer;
+    a {
+      text-decoration: underline;
+      color:  #202C38;
+    }
+
+    input[type="checkbox"] {
+      flex: 0 0 auto;
+      appearance: none;
+      width: 20px;
+      height: 20px;
+      border: 2px solid #ccc;
+      border-radius: 4px;
+      position: relative;
+      margin-top: 2px;
+      transition: border 0.2s ease;
+
+      &:checked {
+        border-color: #FF8A00;
+        background-color: #FF8A00;
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: 3px;
+          left: 6px;
+          width: 5px;
+          height: 10px;
+          border: solid #fff;
+          border-width: 0 2px 2px 0;
+          transform: rotate(45deg);
+        }
+      }
+    }
+
+    .checkbox-text {
+      line-height: 1.4;
+      a {
+        color: #2B2E38;
+        text-decoration: underline;
+        font-weight: 500;
+      }
+    }
+  }
+}

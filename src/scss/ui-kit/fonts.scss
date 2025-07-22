@@ -17,3 +17,10 @@ $font-family-primary: 'Century Gothic', sans-serif;
 	font-weight: 500;
 	font-style: normal;
 }
+@font-face {
+	font-family: 'Century Gothic';
+	src: url('../font/centurygothic_bold.eot');
+	src: url('../font/centurygothic_bold.eot') format('embedded-opentype'), url('../font/centurygothic_bold.woff2') format('woff2'), url('../font/centurygothic_bold.woff') format('woff'), url('../font/centurygothic_bold.ttf') format('truetype'), url('../font/centurygothic_bold.svg#centurygothic_bold') format('svg');
+	font-weight: 700;
+	font-style: normal;
+}
