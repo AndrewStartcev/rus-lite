@@ -18,6 +18,11 @@
     font-weight: 400;
     line-height: 120%;
   }
+  &.w-100 {
+    p {
+      max-width: 100%;
+    }
+  }
 }
 
 @include media-tablet-horizontal {
