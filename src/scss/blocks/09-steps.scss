@@ -43,8 +43,12 @@
   &__icon {
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    gap: 10px;
+    border-radius: 24px;
+    background:  #F9F5F0;
+
     img {
       margin: 29px;
     }

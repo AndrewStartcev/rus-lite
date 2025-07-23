@@ -1,0 +1,126 @@
+.marketplace {
+  padding: 120px 0;
+  border-radius: 64px;
+  background-color: #fff;
+  &__wrapper {
+    display: flex;
+    align-items: stretch;
+    gap: 20px;
+  }
+
+  &__item {
+    flex: 1 1 33.33%;
+    display: flex;
+    padding: 12px;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 32px;
+    background:  #F6F6F6;
+    &:last-child {
+     .marketplace {
+      &__cover {
+         background: linear-gradient(31deg, #6F01FB 7.22%, #FF49D7 94.15%);
+      }
+     }
+    }
+    &:first-child {
+      background: rgba(243, 147, 43, 0.12);
+      .marketplace {
+        &__cover {
+           background-color: #202C38;
+        }
+      }
+    }
+
+  }
+
+  &__cover {
+    flex: 1 1 auto;
+    display: flex;
+    padding: 24px 12px;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    width: 100%;
+    background: #005BFF;
+    border-radius: 24px 24px 8px 8px;
+    color:  #FFF;
+  }
+
+  &__icon {
+    display: flex;
+    padding: 12px;
+    align-items: center;
+    gap: 10px;
+    border-radius: 100px;
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  &__name {
+    margin: 0;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 100%;
+  }
+
+  &__text {
+    margin: 0;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 120%;
+
+  }
+  .btn, .link {
+    margin: 24px;
+    width: 100%;
+  }
+}
+
+@include media-tablet-horizontal {
+  .marketplace {
+    padding: 84px 0;
+    border-radius: 48px;
+    &__wrapper {
+      flex-wrap: wrap;
+    }
+
+    &__item {
+      flex: 1 1 45%;
+      border-radius: 32px;
+      &:first-child {
+        order: 1;
+      }
+
+    }
+
+    &__cover {
+      gap: 12px;
+    }
+
+    &__text {
+      font-size: 14px;
+
+    }
+  }
+}
+
+@include media-mobile-horizontal {
+  .marketplace {
+    padding: 64px 0;
+    border-radius: 32px;
+    &__item {
+      border-radius: 24px;
+    }
+    &__cover {
+      padding: 24px 12px;
+    }
+    &__name {
+      font-size: 20px;
+    }
+    .btn, .link {
+      padding: 16px;
+    }
+  }
+}

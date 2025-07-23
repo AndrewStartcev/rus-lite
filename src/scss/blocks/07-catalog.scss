@@ -70,13 +70,6 @@
     }
     &.catalog-notab {
       display: flex;
-      .catalog__cover {
-        background: #202C38;
-        color: #FFF;
-      }
-      .catalog__name {
-        color: #FFF;
-      }
     }
 
   }
@@ -103,7 +96,9 @@
     background:  #F3EFEA;
     width: 100%;
     aspect-ratio: 5 / 5.5;
-
+    img {
+      mix-blend-mode: darken;
+    }
   }
 
   &__name {
@@ -148,6 +143,15 @@
           }
         }
       }
+    }
+    p {
+      color:  #202C38;
+      text-align: center;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 120%;
+
     }
     ul {
       list-style: none;
@@ -371,13 +375,16 @@
     }
 
     &__item {
-      flex: 1 1 90%;
+      min-width: 300px;
     }
     &__cover {
       aspect-ratio: 5 / 5;
       img {
         max-height: 150px;
       }
+    }
+    &__footer {
+      padding: 0;
     }
 
     &__links {
