@@ -487,29 +487,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-new Swiper("#offersSlider", {
-  slidesPerView: 1.2,
-  spaceBetween: 12,
-  loop: true,
-  scrollbar: {
-    el: "#offersSlider .swiper-scrollbar",
-    hide: true,
-  },
-  navigation: {
-    nextEl: "#offersSlider .swiper-button-next",
-    prevEl: "#offersSlider .swiper-button-prev",
-  },
-  breakpoints: {
-    768: {
-      slidesPerView: 2,
-      spaceBetween: 20,
-    },
-    1024: {
-      slidesPerView: 3,
-      spaceBetween: 20,
-    },
-  },
-});
 
 new Swiper("#reviewsSlider", {
   slidesPerView: 1.2,
@@ -518,11 +495,11 @@ new Swiper("#reviewsSlider", {
   scrollbar: {
     el: "#reviews .swiper-scrollbar",
     hide: false,
-    draggable: true
+    draggable: true,
   },
   navigation: {
-    nextEl: "#reviewsSlider .swiper-button-next",
-    prevEl: "#reviewsSlider .swiper-button-prev",
+    nextEl: "#reviews .swiper-button-next",
+    prevEl: "#reviews .swiper-button-prev",
   },
   breakpoints: {
     768: {
@@ -535,7 +512,30 @@ new Swiper("#reviewsSlider", {
     },
   },
 });
-
+new Swiper("#videoSlider", {
+  slidesPerView: 1.2,
+  spaceBetween: 12,
+  loop: false,
+  scrollbar: {
+    el: "#videoSlider .swiper-scrollbar",
+    hide: false,
+    draggable: true,
+  },
+  navigation: {
+    nextEl: "#video .swiper-button-next",
+    prevEl: "#video .swiper-button-prev",
+  },
+  breakpoints: {
+    768: {
+      slidesPerView: 1.3,
+      spaceBetween: 20,
+    },
+    1024: {
+      slidesPerView: 2.5,
+      spaceBetween: 20,
+    },
+  },
+});
 
 document.addEventListener('DOMContentLoaded', function() {
   const header = document.querySelector('header');
