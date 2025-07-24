@@ -563,3 +563,79 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const radioInputs = document.querySelectorAll('input[name="product_size"]');
+  const checkboxInputs = document.querySelectorAll('input[name="additional"]');
+  const previewContainer = document.querySelector(".constructor-preview");
+  const previewImage = previewContainer.querySelector("img");
+  const totalPriceEl = document.getElementById("ctrPrice");
+  const oldPriceEl = document.getElementById("ctrOldPrice");
+  const hiddenInput = document.getElementById("productSummary");
+
+  function formatPrice(num) {
+    return num.toLocaleString("ru-RU") + " ₽";
+  }
+
+  function updateMainImage() {
+    const selectedRadio = document.querySelector('input[name="product_size"]:checked');
+    const parent = selectedRadio.closest(".ctr-logic__item");
+    const imgSrc = parent.dataset.src;
+    if (imgSrc) previewImage.src = imgSrc;
+  }
+
+  function updateAddonImages() {
+    // Удаляем все .addon-preview
+    previewContainer.querySelectorAll(".addon-preview").forEach(el => el.remove());
+
+    checkboxInputs.forEach(input => {
+      if (input.checked) {
+        const block = input.closest(".ctr-logic__block");
+        const addonSrc = block.dataset.src;
+        if (addonSrc) {
+          const addonImg = document.createElement("img");
+          addonImg.src = addonSrc;
+          addonImg.classList.add("addon-preview");
+          addonImg.style.pointerEvents = "none";
+          previewContainer.appendChild(addonImg);
+        }
+      }
+    });
+  }
+
+  function calculateTotal() {
+    let total = 0;
+    let summary = [];
+
+    const selectedRadio = document.querySelector('input[name="product_size"]:checked');
+    const basePrice = parseInt(selectedRadio.dataset.price);
+    total += basePrice;
+    summary.push(`${selectedRadio.value} (${formatPrice(basePrice)})`);
+
+    checkboxInputs.forEach(input => {
+      if (input.checked) {
+        const price = parseInt(input.dataset.price);
+        total += price;
+        summary.push(`${input.value} (${formatPrice(price)})`);
+      }
+    });
+
+    totalPriceEl.textContent = formatPrice(total);
+    oldPriceEl.textContent = formatPrice(Math.round(total * 1.4));
+
+    if (hiddenInput) hiddenInput.value = summary.join(", ");
+  }
+
+  function updateAll() {
+    updateMainImage();
+    updateAddonImages();
+    calculateTotal();
+  }
+
+  // Навешиваем события
+  radioInputs.forEach(input => input.addEventListener("change", updateAll));
+  checkboxInputs.forEach(input => input.addEventListener("change", updateAll));
+
+  // Инициализация
+  updateAll();
+});
