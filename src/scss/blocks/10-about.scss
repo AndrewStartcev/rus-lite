@@ -1,0 +1,150 @@
+.about {
+  margin: 120px 0;
+  &_subtitle {
+    color:  #F3932B;
+    font-size: 32px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 80%;
+    letter-spacing: -1.28px;
+    margin: 32px 0;
+  }
+
+  &__wrapper {
+    position: relative;
+  }
+
+  &__image {
+    position: absolute;
+    bottom: -50px;
+    left: -191px;
+    img {
+      width: 610px;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  &__content {
+    margin-left: 455px;
+    h2 {
+      margin: 0;
+      color:  #202C38;
+      font-size: 70px;
+      font-weight: 400;
+      line-height: 80%;
+      letter-spacing: -2.8px;
+    }
+    p {
+      color:  rgba(32, 44, 56, 0.80);
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 120%;
+    }
+    h3 {
+      margin: 32px 0 24px;
+      color:  #202C38;
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 100%;
+
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    align-self: stretch;
+  }
+
+  &__item {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    align-self: stretch;
+
+    &::before {
+      content: '';
+      display: block;
+      width: 20px;
+      height: 20px;
+      flex: 0 0 auto;
+      background: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%0A%3E%3Cpath d='M10 0C4.49 0 0 4.49 0 10C0 15.51 4.49 20 10 20C15.51 20 20 15.51 20 10C20 4.49 15.51 0 10 0ZM14.78 7.7L9.11 13.37C8.97 13.51 8.78 13.59 8.58 13.59C8.38 13.59 8.19 13.51 8.05 13.37L5.22 10.54C4.93 10.25 4.93 9.77 5.22 9.48C5.51 9.19 5.99 9.19 6.28 9.48L8.58 11.78L13.72 6.64C14.01 6.35 14.49 6.35 14.78 6.64C15.07 6.93 15.07 7.4 14.78 7.7Z' fill='%2319AD3D' /%3E%3C/svg%3E%0A") center center / contain no-repeat;
+    }
+    b {
+      color:  #202C38;
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 100%;
+    }
+    p, li {
+      margin: 8px 0;
+      color:  rgba(32, 44, 56, 0.80);
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 120%;
+    }
+  }
+}
+
+@include media-tablet-horizontal {
+  .about {
+    margin: 84px 0;
+    &__image {
+      display: none;
+    }
+
+    &__content {
+      margin-left: 0px;
+      h2 {
+        font-size: 54px;
+      }
+      p, li {
+        font-size: 20px;
+      }
+      ol {
+        padding-left: 15px;
+      }
+    }
+
+    &__item {
+    }
+  }
+}
+
+@include media-mobile-horizontal {
+    .about {
+    margin: 64px 0;
+      &_subtitle {
+        font-size: 16px;
+        margin: 24px 0;
+      }
+      &__content {
+        margin-left: 0px;
+        h2 {
+          font-size: 32px;
+        }
+        h3 {
+          font-size: 20px;
+          margin: 24px 0 16px;
+
+        }
+        b {
+          font-size: 16px;
+        }
+        p, li {
+          font-size: 16px;
+        }
+        ol {
+          padding-left: 0px;
+        }
+      }
+
+      &__item {
+      }
+  }
+}
