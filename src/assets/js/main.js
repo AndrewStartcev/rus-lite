@@ -511,25 +511,26 @@ new Swiper("#offersSlider", {
   },
 });
 
-new Swiper("#ProductSlider", {
+new Swiper("#reviewsSlider", {
   slidesPerView: 1.2,
   spaceBetween: 12,
-  loop: true,
+  loop: false,
   scrollbar: {
-    el: "#ProductSliderMain .swiper-scrollbar",
-    hide: true,
+    el: "#reviews .swiper-scrollbar",
+    hide: false,
+    draggable: true
   },
   navigation: {
-    nextEl: "#ProductSliderMain .swiper-button-next",
-    prevEl: "#ProductSliderMain .swiper-button-prev",
+    nextEl: "#reviewsSlider .swiper-button-next",
+    prevEl: "#reviewsSlider .swiper-button-prev",
   },
   breakpoints: {
     768: {
-      slidesPerView: 2,
+      slidesPerView: 1.3,
       spaceBetween: 20,
     },
     1024: {
-      slidesPerView: 3,
+      slidesPerView: 2.5,
       spaceBetween: 20,
     },
   },
